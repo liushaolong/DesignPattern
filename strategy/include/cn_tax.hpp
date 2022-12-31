@@ -1,4 +1,5 @@
 #include "tax_strategy.hpp"
+
 #ifndef CN_TAX
 #define CN_TAX
 
