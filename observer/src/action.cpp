@@ -9,7 +9,7 @@ action::~action()
 {
 }
 
-void action::add_observer(std::string key, notify *obj)
+void action::attach(std::string key, notify *obj)
 {
     if (observers.find(key) == observers.end())
     {
@@ -17,7 +17,7 @@ void action::add_observer(std::string key, notify *obj)
     }
 }
 
-void action::remove_observer(std::string key)
+void action::detach(std::string key)
 {
     if (observers.find(key) != observers.end())
     {
@@ -25,7 +25,7 @@ void action::remove_observer(std::string key)
     }
 }
 
-void action::do_catch()
+void action::do_notify()
 {
     for (auto item = observers.begin(); item != observers.end(); item++)
     {
